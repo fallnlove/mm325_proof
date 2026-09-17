@@ -1,0 +1,11 @@
+name = "mm325_lower_bound"
+version = "0.2.1"
+defaultTargets = ["MatrixMultiplicationLowerBound25"]
+
+[[lean_lib]]
+name = "MatrixMultiplicationLowerBound25"
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "c44e0c8ee63ca166450922a373c7409c5d26b00b"
