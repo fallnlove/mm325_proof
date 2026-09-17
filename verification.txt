@@ -1,0 +1,51 @@
+Verified 2026-09-17
+Lean 4.19.0
+mathlib commit c44e0c8ee63ca166450922a373c7409c5d26b00b
+
+lake build: completed successfully (style warnings only).
+lake env lean Audit.lean: exit status 0.
+
+MatrixMultiplicationLowerBound.theorem_one.{u_2} (K : Type u_2) [Field K] (mcols : ℕ) (hm : 0 < mcols) :
+  24 * mcols < 5 * MatrixMultiplicationLowerBound.matrixMultiplicationRank K mcols
+MatrixMultiplicationLowerBound.theorem_one_rational.{u_2} (K : Type u_2) [Field K] (mcols : ℕ) (hm : 0 < mcols) :
+  24 * ↑mcols / 5 < ↑(MatrixMultiplicationLowerBound.matrixMultiplicationRank K mcols)
+MatrixMultiplicationLowerBound.theorem_one_rounded.{u_2} (K : Type u_2) [Field K] (mcols : ℕ) (hm : 0 < mcols) :
+  24 * mcols / 5 + 1 ≤ MatrixMultiplicationLowerBound.matrixMultiplicationRank K mcols
+MatrixMultiplicationLowerBound.matrix_algorithm_rank_strict.{u_1} {mcols : ℕ} {K : Type u_1} [Field K] {r : ℕ}
+  (hm : 0 < mcols) (α : Fin r → Matrix (Fin 3) (Fin 2) K →ₗ[K] K) (β : Fin r → Matrix (Fin 2) (Fin mcols) K →ₗ[K] K)
+  (C : Fin r → Matrix (Fin 3) (Fin mcols) K)
+  (h : ∀ (A : Matrix (Fin 3) (Fin 2) K) (B : Matrix (Fin 2) (Fin mcols) K), A * B = ∑ k, ((α k) A * (β k) B) • C k) :
+  24 * mcols < 5 * r
+MatrixMultiplicationLowerBound.rank_325_ge25.{u_2} (K : Type u_2) [Field K] :
+  25 ≤ MatrixMultiplicationLowerBound.matrixMultiplicationRank K 5
+MatrixMultiplicationLowerBound.matrix_algorithm_rank_ge25.{u_1} {K : Type u_1} [Field K] {r : ℕ}
+  (α : Fin r → Matrix (Fin 3) (Fin 2) K →ₗ[K] K) (β : Fin r → Matrix (Fin 2) (Fin 5) K →ₗ[K] K)
+  (C : Fin r → Matrix (Fin 3) (Fin 5) K)
+  (h : ∀ (A : Matrix (Fin 3) (Fin 2) K) (B : Matrix (Fin 2) (Fin 5) K), A * B = ∑ k, ((α k) A * (β k) B) • C k) : 25 ≤ r
+'MatrixMultiplicationLowerBound.theorem_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixMultiplicationLowerBound.theorem_one_rational' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixMultiplicationLowerBound.theorem_one_rounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixMultiplicationLowerBound.matrix_algorithm_rank_strict' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixMultiplicationLowerBound.rank_325_ge25' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixMultiplicationLowerBound.matrix_algorithm_rank_ge25' depends on axioms: [propext, Classical.choice, Quot.sound]
+MatrixMultiplicationLowerBound.Decomposition.toMatrixAlgorithm.{u_1} {K : Type u_1} [Field K] {mcols r : ℕ}
+  (D : MatrixMultiplicationLowerBound.Decomposition K mcols r) :
+  MatrixMultiplicationLowerBound.MatrixAlgorithm K mcols r
+MatrixMultiplicationLowerBound.decomposition_iff_matrixAlgorithm.{u_1} {K : Type u_1} [Field K] {mcols r : ℕ} :
+  Nonempty (MatrixMultiplicationLowerBound.Decomposition K mcols r) ↔
+    Nonempty (MatrixMultiplicationLowerBound.MatrixAlgorithm K mcols r)
+MatrixMultiplicationLowerBound.rank_eq.{u_2} (K : Type u_2) [Field K] (mcols : ℕ) :
+  MatrixMultiplicationLowerBound.matrixMultiplicationRank K mcols =
+    MatrixMultiplicationLowerBound.matrixTensorRank K mcols
+MatrixMultiplicationLowerBound.theorem_one_tensorRank.{u_2} (K : Type u_2) [Field K] (mcols : ℕ) (hm : 0 < mcols) :
+  24 * ↑mcols / 5 < ↑(MatrixMultiplicationLowerBound.matrixTensorRank K mcols)
+'MatrixMultiplicationLowerBound.Decomposition.toMatrixAlgorithm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MatrixMultiplicationLowerBound.decomposition_iff_matrixAlgorithm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'MatrixMultiplicationLowerBound.rank_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MatrixMultiplicationLowerBound.theorem_one_tensorRank' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+Source SHA256: 9d3ebc3afefa314f04166608d45cde4c4f9c50727c7a9765b969981c1d38d298
